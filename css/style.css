@@ -1,0 +1,279 @@
+
+/* Обнуление стилей */
+*,
+*::before *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+ 
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+html,body {
+    height: 100%;
+}
+
+/* По умолчанию 16 рх */
+html {
+    font-size: 16px;
+}
+
+body {
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+} 
+ 
+.wrapper {
+    min-height: 100%;  
+    overflow: hidden;
+    padding: 50px;
+}
+
+/* .........lesson10.......... */
+
+.block {
+
+     /* По-умолчанию 
+
+    position: static;
+    
+    top
+    left
+    right
+    bottom
+    z-index */
+    
+}
+
+.block__item {
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin: -20px 0px 0px 0px;
+
+    position: relative;
+}
+
+.block__item_color-brown {
+    background-color: brown;
+ z-index: 2; 
+position: absolute;  
+top: 25px;
+left: 2px;
+margin: 80px;
+  /* z-index: auto;  */
+}
+
+.block__item_color-purple {
+    background-color: purple;
+    left: 20px;
+    margin: 40px;
+}
+
+.block__item_color-green {
+    background-color: green;
+    margin: 10px 0px 0px -35px ;
+    height: 150px;
+    width: 250px;
+  
+}
+
+.block__item_color-purple span {
+position: relative;
+ z-index: 3;
+ display: inline-block;
+ background-color: rgb(186, 186, 45);
+ color: black;
+ padding: 10px;
+
+
+ left: 100px;
+}
+
+
+
+.block__item_color-black  {
+ position: relative;
+    right: -100px;
+    top: 50%;
+    background-color:black;
+    color: white;
+    display: inline-block;
+    z-index: 4;
+}
+
+
+.block__item_color-green span{
+    color: brown;
+    background-color: chartreuse;
+    position: relative;
+    top: 35px;
+    right: 55px;
+    font-size: 30px;
+}
+
+
+
+.block__item_color-red {
+    background-color: red;
+    color: aqua;
+    position: fixed;
+}
+
+
+/* 
+position: static;
+
+Статичное положение обьекта (по умолчанию)
+left, top, right, bottom, z-index - не работает 
+*/
+
+
+/* 
+    position: relative;
+
+Положение элемента устанавливается относительно 
+его исходного положения в коде.
+Добавление свойства left, top, right, bottom изменяет позицию элемента и сдвигает
+его в ту или иную сторону от первоначального расположения.
+
+left, top, right, bottom, z-index - работает 
+
+*/
+
+/* 
+position: absolute;
+
+Элементы якобы вырываются из кода и зависают в воздухе.
+Он перестает влиять на остальные элементы.
+Добавление свойств left,top, right, bottom
+изменяет позицию элемента и сдвигает его в ту или иную сторону относительно родителя
+у которого задан парамет position: relative;
+
+left, top, right, bottom, z-index - работает 
+
+1) Обьект теряет свое "тело" и зависает в воздухе.
+2)Другие обьекты занимают его место.
+3) Обьект перемещается в строчный, тоесть размер зависит от контента
+4) Обьект позициогнируется относительно первого родителя, 
+для которого указано position: relative;
+5) Необходимо сопровождать свойствами left, top, right, bottom,
+
+*/
+
+/* position: fixed;
+
+Элементы якобы вырываются из кода и зависают в воздухе.
+Фиксируется, не скролится вместе с содержимым
+Он перестает влиять на остальные элементы.
+Добавление свойств left,top, right, bottom
+изменяет позицию элемента и сдвигает его в ту или иную сторону относительно окна браузера.
+
+left, top, right, bottom, z-index - работает 
+
+*/
+
+
+/* 
+z-index:auto;
+
+Можно управлять обьектом. 
+Каждый элемент может находиться как ниже, так и выше других обьектов веб-страницы,
+их  размещение по Z- оси и управляет z-index.
+Это свойство работает только для элементов, у которых значение position отличное от static.
+*/
+
+/* Свойства позиционирования, можно указывать px, %, другие единиці
+top,
+left,
+right,
+bottom
+*/
+
+
+.list {
+    margin: 70px 0px 0px 0px;
+}
+
+
+.list__item {
+position: relative;
+    padding: 0px 0xp 0xp 30px;
+}
+
+.list__item::before {
+    content: "";
+    border-radius: 50%;
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: -20px;
+}
+
+.list__item:not(:last-child) {
+    margin: 0px  0px 10px 0px;
+}
+
+
+.image {
+    position: relative;
+    display: inline-block;
+}
+.image__item {
+    width: 400px;
+}
+
+.image::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.647);
+}
+
+
+.image:hover::before {
+    opacity: 0;
+}
+
+.header {
+    background-color: chocolate;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
